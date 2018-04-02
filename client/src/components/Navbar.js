@@ -31,6 +31,7 @@ class Navbar extends Component {
         return (
             <Nav>
         {/* site name goes here */}
+        <Link to="/">Home</Link>
           <LinkContainer>
             <LinkMargin>
               <Link to="/cities">Cities</Link>

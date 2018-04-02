@@ -3,7 +3,9 @@
 one:
   title: MyString
   comment: MyText
+  city: one
 
 two:
   title: MyString
   comment: MyText
+  city: two
