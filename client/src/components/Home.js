@@ -52,6 +52,7 @@ class Home extends Component {
               to its family, and I said to myself, "I can't do it. <br /> I just
               can't do it. It's inappropriate. It's not nice."
             </p>
+            
             <ButtonPadding>
               <Button type="submit">Sign Up</Button>
             </ButtonPadding>
