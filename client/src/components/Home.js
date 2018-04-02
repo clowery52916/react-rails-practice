@@ -40,6 +40,7 @@ const BodyContent = styled.div`
 `;
 
 class Home extends Component {
+
   render() {
     return (
       <HomeContainer>

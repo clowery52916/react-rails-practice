@@ -15,9 +15,12 @@ class City extends Component {
     getCity = async (cityId) => {
         try {
             const cityRes = await axios.get(`/api/cities/${cityId}`)
+            const postRes = await axios.get(`/api/cities/${cityId}/posts`)
             await this.setState({
-                city: cityRes.data
+                city: cityRes.data,
+                post: postRes.data
             })
+            console.log(postRes.data)
         }
         catch (err) {
             console.log(err)
@@ -30,8 +33,13 @@ class City extends Component {
                 <h1>hey</h1>
                 {this.state.city.name}
                 <img src={this.state.city.img}/>
-                {this.state.description}
-                {this.state.post}
+                {this.state.city.description}
+                {this.state.post.map(p => (
+                    <div>
+                    <div key={p.id}>{p.title}</div>
+                    <div>{p.comment}</div>
+                    </div>
+                ))}
             </div>
         );
     }
