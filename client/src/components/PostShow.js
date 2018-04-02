@@ -22,8 +22,8 @@ class PostShow extends Component {
         return (
             <div>
                 <h1>Hey whaddup, this is a new page that i am testing. thank you for being here.</h1>
-                {this.state.post.title}
-                {this.state.post.comment}
+                <div>{this.state.post.title}</div>
+                <div>{this.state.post.comment}</div>
             </div>
         );
     }

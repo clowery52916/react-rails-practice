@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
+import CommentForm from './CommentForm'
 
 class City extends Component {
     state = {
         city: {},
         post: [],
+        commentForm: false,
         error: ''
     }
     componentWillMount() {
@@ -28,6 +31,11 @@ class City extends Component {
             await this.setState({error: err.message})
         }
     }
+
+    toggleCommentForm = () => {
+        this.setState({ commentForm: !this.state.commentForm})
+    }
+
     render() {
         return (
             <div>
@@ -35,6 +43,11 @@ class City extends Component {
                 {this.state.city.name}
                 <img src={this.state.city.img}/>
                 {this.state.city.description}
+
+                <Button onClick={this.toggleCommentForm}>Write a comment!</Button>
+                {this.state.commentForm ? (
+                    <CommentForm cityId={this.state.city.id}/>
+                ): null }
                 {this.state.post.map(p => (
                     <div>
                     <div key={p.id}>
