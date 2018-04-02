@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import styled from 'styled-components'
+import PostShow from './components/PostShow'
 
 const Flex = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path="/" component={Home}/>
           <Route exact path="/cities" component={CityList} />
           <Route exact path="/cities/:id" component={City}/>
+          <Route exact path="/cities/:id/posts/:id" component={PostShow}/>
         </Switch>
         <Footer/>
         </Flex>
