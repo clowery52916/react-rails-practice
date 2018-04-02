@@ -15,10 +15,15 @@ class Api::PostsController < ApplicationController
         # redirect_to ("/cities/")
     end
 
-
     def show
         @post = Post.find(params[:id])
         render json: @post
+    end
+
+    def destroy
+        @city = City.find(params[:city_id])
+        @post = @city.posts.find(params[:id])
+        @post.destroy
     end
 
     private

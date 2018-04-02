@@ -36,7 +36,6 @@ class City extends Component {
             const postRes = await axios.get(`/api/cities/${cityId}/posts`)
             await this.setState({
                 city: cityRes.data
-                // post: postRes.data
             })
         }
         catch (err) {
