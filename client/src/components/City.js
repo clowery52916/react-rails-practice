@@ -14,17 +14,30 @@ class City extends Component {
     componentWillMount() {
         const cityId = this.props.match.params.id
         this.getCity(cityId)
+        this.getPost(cityId)
+    }
+
+    getPost = async (cityId) => {
+        try {
+            const res = await axios.get(`/api/cities/${cityId}/posts`)
+            await this.setState({
+                post: res.data
+            })
+        }
+        catch(err) {
+            console.log(err)
+            await this.setState({error: err.message})
+        }
     }
 
     getCity = async (cityId) => {
         try {
             const cityRes = await axios.get(`/api/cities/${cityId}`)
-            const postRflkes = await axios.get(`/api/cities/${cityId}/posts`)
+            const postRes = await axios.get(`/api/cities/${cityId}/posts`)
             await this.setState({
-                city: cityRes.data,
-                post: postRes.data
+                city: cityRes.data
+                // post: postRes.data
             })
-            console.log(postRes.data)
         }
         catch (err) {
             console.log(err)
@@ -46,7 +59,8 @@ class City extends Component {
 
                 <Button onClick={this.toggleCommentForm}>Write a comment!</Button>
                 {this.state.commentForm ? (
-                    <CommentForm cityId={this.state.city.id}/>
+                    <CommentForm cityId={this.state.city.id}
+                    getPost={this.getPost}/>
                 ): null }
                 {this.state.post.map(p => (
                     <div>
