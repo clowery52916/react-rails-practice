@@ -5,7 +5,8 @@ import { Button } from 'semantic-ui-react'
 class PostShow extends Component {
     state = {
         city: {},
-        post: {}
+        post: {},
+        deleteToggle: false
     }
 
     componentWillMount() {
@@ -19,6 +20,9 @@ class PostShow extends Component {
         this.setState({ post: res.data })
     }
 
+    deleteToggle = () => {
+        this.setState({ deleteToggle: !this.state.deleteToggle})
+    }
     // deletePost = async () => {
     //     const postId = this.props.match.params.id
     //     await axios.delete(`/api/cities/`)
@@ -30,7 +34,14 @@ class PostShow extends Component {
                 <h1>Hey whaddup, this is a new page that i am testing. thank you for being here.</h1>
                 <div>{this.state.post.title}</div>
                 <div>{this.state.post.comment}</div>
-                <Button>Delete this shit</Button>
+                <Button onClick={this.deleteToggle}>Delete this shit</Button>
+                {this.state.deleteToggle? (
+                    <div>
+                        <p>Are you sure you want to delete?</p>
+                        <Button>Yes</Button>
+                        <Button>No</Button>
+                    </div>
+                ): null}
             </div>
         );
     }
