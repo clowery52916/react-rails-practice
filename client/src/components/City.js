@@ -18,6 +18,7 @@ class City extends Component {
             await this.setState({
                 city: cityRes.data
             })
+            console.log(cityRes.data)
         }
         catch (err) {
             console.log(err)
@@ -30,8 +31,8 @@ class City extends Component {
                 <h1>hey</h1>
                 {this.state.city.name}
                 <img src={this.state.city.img}/>
-                {this.state.description}
-                {this.state.post}
+                {this.state.city.description}
+                {this.state.city.posts}
             </div>
         );
     }
