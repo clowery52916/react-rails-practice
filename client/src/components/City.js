@@ -15,7 +15,7 @@ class City extends Component {
     getCity = async (cityId) => {
         try {
             const cityRes = await axios.get(`/api/cities/${cityId}`)
-            const postRes = await axios.get(`/api/cities/${cityId}/posts`)
+            const postRflkes = await axios.get(`/api/cities/${cityId}/posts`)
             await this.setState({
                 city: cityRes.data,
                 post: postRes.data
