@@ -16,17 +16,21 @@ class PostShow extends Component {
     getPost = async () => {
         const postId = this.props.match.params.id
         const res = await axios.get(`/api/cities/:city_id/posts/${postId}`)
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({ post: res.data })
     }
 
     deleteToggle = () => {
         this.setState({ deleteToggle: !this.state.deleteToggle})
     }
-    // deletePost = async () => {
-    //     const postId = this.props.match.params.id
-    //     await axios.delete(`/api/cities/`)
-    // }
+
+    deletePost = async () => {
+        const postId = this.props.match.params.id
+        const cityId = this.state.post.city_id
+        console.log(cityId)
+        await axios.delete(`/api/cities/${cityId}/posts/${postId}`)
+        this.props.history.push(`/cities/${cityId}`)
+    }
 
     render() {
         return (
@@ -37,8 +41,8 @@ class PostShow extends Component {
                 <Button onClick={this.deleteToggle}>Delete this shit</Button>
                 {this.state.deleteToggle? (
                     <div>
-                        <p>Are you sure you want to delete?</p>
-                        <Button>Yes</Button>
+                        <p>Are you sure you want to delete this shit?</p>
+                        <Button onClick={this.deletePost}>Yes</Button>
                         <Button>No</Button>
                     </div>
                 ): null}
