@@ -12,7 +12,7 @@ City.destroy_all
 
 
 
-atlanta = City.create!(name: 'Atlanta' , img: 'https://www.atlantaga.gov/Home/ShowImage?id=3728&t=636339564821530000'  )
+atlanta = City.create!(name: 'Atlanta' , img: 'https://www.atlantaga.gov/Home/ShowImage?id=3728&t=636339564821530000', description: "This city is fuckin tight!"  )
 boston = City.create!(name: 'Boston', img:  'https://assets3.thrillist.com/v1/image/2442752/size/tmg-facebook_social.jpg' )
 austin = City.create!(name: 'Austin', img:  'https://austinot.com/wp-content/uploads/2012/06/Downtown-Austin-Texas-1024x543.jpg' )
 newyork = City.create!(name: 'New York', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdopbnR0KQN6bTR4TPTwSwmtNVErkbJyVVEvwdGbEcpaBksqdgcA'  )

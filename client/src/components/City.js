@@ -30,6 +30,8 @@ class City extends Component {
                 <h1>hey</h1>
                 {this.state.city.name}
                 <img src={this.state.city.img}/>
+                {this.state.description}
+                {this.state.post}
             </div>
         );
     }

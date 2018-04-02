@@ -21,7 +21,7 @@ class App extends Component {
         <Flex>
         <Navbar/>
         <Switch>
-          <Route exact path="/home" component={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/cities" component={CityList} />
           <Route exact path="/cities/:id" component={City}/>
         </Switch>
