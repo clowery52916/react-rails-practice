@@ -1,34 +1,42 @@
 import React, { Component } from 'react';
 import { Form, Input } from 'semantic-ui-react'
+import axios from 'axios'
 
 class CommentForm extends Component {
     state = {
+        new: {
         title: '',
         comment: ''
+        }
     }
     
     componentDidMount() {
         console.log(this.props.cityId)
     }
 
-    getAllPosts
 
     handleChange = (event) => {
         const name = event.target.name
-        const newState = { ... this.state }
-        newState[name] = event.target.value
-        this.setState({newState})
+        const newPost = { ... this.state.new }
+        newPost[name] = event.target.value
+        this.setState({ new: newPost })
     }
 
-    handleSubmit = () => {
+    handleSubmit = async (event) => {
+        event.preventDefault()
         const cityId = this.props.cityId
-        console.log(cityId)
+        const payload = this.state.new
+        const response = await axios.post(`/api/cities/${cityId}/posts`, payload)
+        console.log(response.data)
+        const posts = [ ...this.state.new, response.data ]
+        this.setState({ new: posts })
+        await this.props.getPost(cityId)
     }
 
     render() {
         return (
             <div>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <label>title</label>
                     <Input placeholder="title"
                     onChange={this.handleChange}
