@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class City extends Component {
     state = {
@@ -36,7 +37,9 @@ class City extends Component {
                 {this.state.city.description}
                 {this.state.post.map(p => (
                     <div>
-                    <div key={p.id}>{p.title}</div>
+                    <div key={p.id}>
+                    <Link to={`/cities/${this.state.city.id}/posts/${p.id}`}>{p.title}</Link>
+                    </div>
                     <div>{p.comment}</div>
                     </div>
                 ))}
