@@ -1,6 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+const BondLogo = styled.img`
+  max-height: 25px;
+  border-radius: 30px;
+  margin: 0 4px;
+`;
 
 const Nav = styled.div`
   height: 15vh;
@@ -8,9 +14,13 @@ const Nav = styled.div`
   background: black;
   color: white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 1;
+  a {
+    color: white;
+    margin: auto;
+  }
 `;
 
 const LinkContainer = styled.div`
@@ -20,18 +30,24 @@ const LinkContainer = styled.div`
 
 const LinkMargin = styled.div`
   margin: 10px;
-  a {
-    color: white;
-    margin: auto;
-  }
+  
 `;
 
+const LogoFlex = styled.div`
+display: flex;
+`
+
 class Navbar extends Component {
-    render() {
-        return (
-            <Nav>
+  render() {
+    return (
+      <Nav>
+        <LogoFlex><Link to="/"><h1>Vagab
+        <BondLogo src="http://www.thedigitalbits.com/media/k2/items/cache/3d3b7d5d68132cc424920deb43e754bb_XL.jpg" alt="Bond Logo" />
+        nd</h1></Link>
+        </LogoFlex>
+
         {/* site name goes here */}
-        <Link to="/">Home</Link>
+        <div>
           <LinkContainer>
             <LinkMargin>
               <Link to="/cities">Cities</Link>
@@ -46,9 +62,10 @@ class Navbar extends Component {
               {/* Link to user sign up page & city page */}
             </LinkMargin>
           </LinkContainer>
+        </div>
       </Nav>
-        );
-    }
+    );
+  }
 }
 
 export default Navbar;
