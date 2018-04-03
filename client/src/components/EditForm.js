@@ -24,11 +24,6 @@ class EditForm extends Component {
         const update = this.state.update
         const res = await axios.patch(`/api/cities/${cityId}/posts/${postId}`, update)
         console.log(res.data)
-        // this.setState({ update: res.data})
-        // const posts = [ ...this.state.update, res.data ]
-        
-        // const getRes = await axios.get(`/api/cities/${cityId}/posts/${postId}`)
-        // await this.setState({ update: getRes })
         this.props.editToggle()
         this.props.getPost()
     }
