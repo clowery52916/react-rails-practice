@@ -12,7 +12,7 @@ const GridExampleCelled = () => (
       </Grid.Column>
       <Grid.Column computer={13}>
         <h1>Made in Atlanta</h1>
-        <Link to={`/cities/29`}>See the city, bitch.</Link>
+        <Link to={`/cities/1`}>See the city, bitch.</Link>
         <p>Lorem Ispum is a choke artist. It chokes! I write the best placeholder text, and
 I'm the biggest developer on the web by far... While that's mock-ups and this is
 politics, are they really so different? I'm speaking with myself, number one,
