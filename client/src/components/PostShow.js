@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Button } from 'semantic-ui-react'
 import EditForm from './EditForm'
+import styled from 'styled-components'
+
+const PostContainer = styled.div`
+    text-align: center;
+`
+
 class PostShow extends Component {
     state = {
         city: {},
         post: {},
         deleteToggle: false,
-        editToggle: false
+        editToggle: false,
+        button: true
     }
 
     componentWillMount() {
@@ -23,10 +30,12 @@ class PostShow extends Component {
 
     deleteToggle = () => {
         this.setState({ deleteToggle: !this.state.deleteToggle})
+        this.setState({ button: !this.state.button })
     }
 
     editToggle = () => {
         this.setState({ editToggle: !this.state.editToggle })
+        this.setState({ button: !this.state.button})
     }
 
     deletePost = async () => {
@@ -39,26 +48,27 @@ class PostShow extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Hey whaddup, this is a new page that i am testing. thank you for being here.</h1>
-                <div>{this.state.post.title}</div>
-                <div>{this.state.post.comment}</div>
-                <Button onClick={this.editToggle}>Edit</Button>
+            <PostContainer>
+                <div><h1>{this.state.post.title}</h1></div>
+                <div><p>{this.state.post.comment}</p></div>
+                {this.state.button? (<div><Button onClick={this.editToggle}>Edit</Button></div>) :null}
+                
                 {this.state.editToggle? (
                     <EditForm cityId={this.state.post.city_id}
                     postId={this.props.match.params.id}
                     getPost={this.getPost}
                     editToggle={this.editToggle}/>
                 ) : null}
-                <Button onClick={this.deleteToggle}>Delete</Button>
+
+                {this.state.button? (<Button onClick={this.deleteToggle}>Delete</Button>) :null }
                 {this.state.deleteToggle? (
                     <div>
                         <p>Are you sure you want to delete?</p>
                         <Button onClick={this.deletePost}>Yes</Button>
-                        <Button>No</Button>
+                        <Button onClick={this.deleteToggle}>No</Button>
                     </div>
                 ): null}
-            </div>
+            </PostContainer>
         );
     }
 }

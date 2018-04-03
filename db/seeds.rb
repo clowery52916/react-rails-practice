@@ -12,7 +12,7 @@ City.destroy_all
 
 
 
-atlanta = City.create!(name: 'Atlanta' , img: 'https://www.atlantaga.gov/Home/ShowImage?id=3728&t=636339564821530000', description: "This city is really getting less appealing to live in due to suburbanites, gentrification, and traffic!")
+atlanta = City.create!(name: 'Atlanta' , img: 'https://images.unsplash.com/photo-1517520688650-28eb9304f326?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=37615fe853cdebf9eb634bf575b17c6b&auto=format&fit=crop&w=1350&q=80', description: "This city is really getting less appealing to live in due to suburbanites, gentrification, and traffic! With an estimated 2016 population of 472,522, it is the cultural and economic center of the Atlanta metropolitan area, home to 5.8 million people and the ninth-largest metropolitan area in the United States. Atlanta is the seat of Fulton County and a small portion of the city extends eastward into DeKalb County.")
 boston = City.create!(name: 'Boston', img:  'https://assets3.thrillist.com/v1/image/2442752/size/tmg-facebook_social.jpg' )
 austin = City.create!(name: 'Austin', img:  'https://austinot.com/wp-content/uploads/2012/06/Downtown-Austin-Texas-1024x543.jpg' )
 newyork = City.create!(name: 'New York', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdopbnR0KQN6bTR4TPTwSwmtNVErkbJyVVEvwdGbEcpaBksqdgcA'  )

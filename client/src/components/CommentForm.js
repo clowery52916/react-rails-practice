@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
-import { Form, Input } from 'semantic-ui-react'
+import { Form, Input, Button } from 'semantic-ui-react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const FormStyle = styled.div`
+width: 60vw;
+margin: 20px auto;
+`
+
+const ButtonStyle = styled.div`
+margin: 10px auto;
+`
 
 class CommentForm extends Component {
     state = {
@@ -25,14 +35,15 @@ class CommentForm extends Component {
         console.log(response.data)
         const posts = [ ...this.state.new, response.data ]
         this.setState({ new: posts })
+        this.props.toggleCommentForm()
         await this.props.getPost(cityId)
     }
 
     render() {
         return (
-            <div>
+            <FormStyle>
                 <Form onSubmit={this.handleSubmit}>
-                    <label>title</label>
+                    <div><label>title</label></div>
                     <Input placeholder="title"
                     onChange={this.handleChange}
                     type="text"
@@ -40,20 +51,21 @@ class CommentForm extends Component {
                     required
                     value={this.state.title}/>
                     <div>
-                        <label>comment</label>
+                        <div><label>comment</label></div>
                         <textarea placeholder="comment"
                         onChange={this.handleChange}
                         type="text"
                         name="comment"
                         require
                         value={this.state.comment}/>
-                        <div>
-                    <button>Submit</button>
-                    </div>
+                        <ButtonStyle>
+                    <Button>Submit</Button>
+                    <Button onClick={this.props.toggleCommentForm}>Cancel</Button>
+                    </ButtonStyle>
                     </div>
 
                 </Form>
-            </div>
+            </FormStyle>
         );
     }
 }
