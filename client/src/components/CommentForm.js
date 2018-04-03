@@ -9,11 +9,6 @@ class CommentForm extends Component {
         comment: ''
         }
     }
-    
-    componentDidMount() {
-        console.log(this.props.cityId)
-    }
-
 
     handleChange = (event) => {
         const name = event.target.name

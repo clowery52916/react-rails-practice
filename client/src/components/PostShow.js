@@ -46,7 +46,9 @@ class PostShow extends Component {
                 <Button onClick={this.editToggle}>Edit this shit</Button>
                 {this.state.editToggle? (
                     <EditForm cityId={this.state.post.city_id}
-                    postId={this.props.match.params.id}/>
+                    postId={this.props.match.params.id}
+                    getPost={this.getPost}
+                    editToggle={this.editToggle}/>
                 ) : null}
                 <Button onClick={this.deleteToggle}>Delete this shit</Button>
                 {this.state.deleteToggle? (
