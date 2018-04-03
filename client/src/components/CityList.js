@@ -20,11 +20,16 @@ const CityContainer = styled.div`
   overflow-y: scroll;
   overflow-x:
    hidden;
+   h3{
+     font-style: italic;
+   }
 `;
 
 const LinkContainer = styled.div `
   font-size: 20px;
 `
+
+
 
 
 
@@ -60,7 +65,10 @@ class CityList extends Component {
     return (
       <CityContainer>
         <br/>
-      <h1>View All Cities</h1>
+      <h1>“The World Is Not Enough” - James Bond</h1>
+
+      <h3>So go out and Explore</h3>
+
       {console.log(this.state.cities)}
       {
         this.state.cities.map(city => (<div key={city.id}>
