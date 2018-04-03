@@ -90,7 +90,7 @@ class City extends Component {
     return (
       <PageWrapper>
           <ImageContainer>
-            <Image src={this.state.city.img} />
+            <ImageStyle src={this.state.city.img} />
           </ImageContainer>
         <CityContainer>
           <div>

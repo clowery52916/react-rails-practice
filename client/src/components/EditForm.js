@@ -8,6 +8,10 @@ const FormContainer = styled.div`
   margin: 20px auto;
 `;
 
+const ButtonSpacing = styled.div`
+margin: 10px;
+`
+
 class EditForm extends Component {
   state = {
     update: {
@@ -66,8 +70,10 @@ class EditForm extends Component {
             required
             value={this.state.comment}
           />
+          <ButtonSpacing>
           <Button>Save Changes</Button>
           <Button onClick={this.props.editToggle}>Cancel</Button>
+          </ButtonSpacing>
         </Form>
       </FormContainer>
     );

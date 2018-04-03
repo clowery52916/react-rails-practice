@@ -8,6 +8,13 @@ const PostContainer = styled.div`
     text-align: center;
 `
 
+const DeleteWarning = styled.div`
+ border: 1px solid red;
+ color: red;
+ font-size: 40px;
+ }
+`
+
 class PostShow extends Component {
     state = {
         city: {},
@@ -62,11 +69,11 @@ class PostShow extends Component {
 
                 {this.state.button? (<Button onClick={this.deleteToggle}>Delete</Button>) :null }
                 {this.state.deleteToggle? (
-                    <div>
+                    <DeleteWarning>
                         <p>Are you sure you want to delete?</p>
                         <Button onClick={this.deletePost}>Yes</Button>
                         <Button onClick={this.deleteToggle}>No</Button>
-                    </div>
+                    </DeleteWarning>
                 ): null}
             </PostContainer>
         );
