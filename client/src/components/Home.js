@@ -15,6 +15,8 @@ const HomeContainer = styled.div`
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: #151515;
+  color: #EAEAEA;
 `;
 
 const LandingText = styled.div`
@@ -22,7 +24,7 @@ const LandingText = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  color: white;
+  color: #EAEAEA;
   border-radius: 10px;
 
   LandingText.h1 {
@@ -37,6 +39,7 @@ const BodyContent = styled.div`
   height: 100vh;
   text-align: center;
   margin: 20px auto;
+  
 `;
 
 class Home extends Component {

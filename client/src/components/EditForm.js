@@ -63,7 +63,7 @@ class EditForm extends Component {
             <label>Comment</label>
           </div>
           <textarea
-            placeholder="comment"
+            placeholder="Comment must contain at least 20 characters."
             onChange={this.handleChange}
             type="text"
             name="comment"

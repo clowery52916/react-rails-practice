@@ -1,7 +1,10 @@
 class Api::PostsController < ApplicationController
+include ActionView::Helpers::DateHelper
+
     def index
         @cities = City.find(params[:city_id])
         @posts = @cities.posts.order(id: :desc)
+        @sexy_date = time_ago_in_words(Date.today - 1)
         render json: @posts
     end
 

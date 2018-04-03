@@ -15,6 +15,18 @@ const DeleteWarning = styled.div`
  }
 `
 
+const PostStyle = styled.div`
+margin: 20px auto;
+background: white;
+color: #151515;
+width: 50%;
+border-radius: 6px;
+`
+
+const ButtonSpacing = styled.div`
+margin: 20px;
+`
+
 class PostShow extends Component {
     state = {
         city: {},
@@ -56,23 +68,27 @@ class PostShow extends Component {
     render() {
         return (
             <PostContainer>
+                <PostStyle>
                 <div><h1>{this.state.post.title}</h1></div>
                 <div><p>{this.state.post.comment}</p></div>
+                </PostStyle>
                 {this.state.button? (<div><Button onClick={this.editToggle}>Edit</Button></div>) :null}
-                
+                <ButtonSpacing>
                 {this.state.editToggle? (
                     <EditForm cityId={this.state.post.city_id}
                     postId={this.props.match.params.id}
                     getPost={this.getPost}
                     editToggle={this.editToggle}/>
                 ) : null}
-
+                </ButtonSpacing>
                 {this.state.button? (<Button onClick={this.deleteToggle}>Delete</Button>) :null }
                 {this.state.deleteToggle? (
                     <DeleteWarning>
                         <p>Are you sure you want to delete?</p>
                         <Button onClick={this.deletePost}>Yes</Button>
+                        <div>
                         <Button onClick={this.deleteToggle}>No</Button>
+                        </div>
                     </DeleteWarning>
                 ): null}
             </PostContainer>

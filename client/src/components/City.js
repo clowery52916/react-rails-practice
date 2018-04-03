@@ -20,7 +20,7 @@ const ImageStyle = styled.img`
 
 const CityContainer = styled.div`
     width: 75vw;
-    border: 1px solid black;
+    border: 1px solid #EAEAEA;
     margin: 20px auto;
     padding: 20px;
 `
@@ -35,6 +35,7 @@ padding: 10px;
 
 const CardStyle = styled.div`
 margin: 5px;
+color: #151515;
 `
 
 const BlackDiv = styled.div`

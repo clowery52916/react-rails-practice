@@ -13,6 +13,8 @@ const Flex = styled.div`
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #151515;
+  color: #EAEAEA;
 `;
 
 class App extends Component {

@@ -52,7 +52,7 @@ class CommentForm extends Component {
                     value={this.state.title}/>
                     <div>
                         <div><label>comment</label></div>
-                        <textarea placeholder="comment"
+                        <textarea placeholder="Comment must contain at least 20 characters."
                         onChange={this.handleChange}
                         type="text"
                         name="comment"

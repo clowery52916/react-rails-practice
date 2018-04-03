@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import { Image } from 'semantic-ui-react'
+import { Image, Card } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 
 const ImageContainer = styled.img`
     max-width: 60vw;
-    border-radius: 20px;
+    border-radius: 6px;
     image-orientation: center;
-
     flex-basis: auto;
-
-
-
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .5);
+    margin-bottom: 20px;
 `;
 const CityContainer = styled.div`
   text-align: center;
@@ -27,9 +25,18 @@ const CityContainer = styled.div`
 
 const LinkContainer = styled.div `
   font-size: 20px;
+
+  a {
+      color: #EAEAEA;
+  }
 `
 
-
+const CityCard = styled.div`
+  border: 1px solid #EAEAEA;
+  background: #151515;
+  width: 80vw;
+  margin: auto;
+`
 
 
 
@@ -68,25 +75,21 @@ class CityList extends Component {
       <h1>“The World Is Not Enough” - James Bond</h1>
 
       <h3>So go out and Explore</h3>
-
+        <CityCard>
       {console.log(this.state.cities)}
-      {
-        this.state.cities.map(city => (<div key={city.id}>
+      { this.state.cities.map(city => (<div key={city.id}>
           <br/>
           <LinkContainer>
           <Link to={`/cities/${city.id}`}>
-            <p>{city.name}</p>
+            <h1>{city.name}</h1>
             <br/>
-          </Link>
-          </LinkContainer>
-          {/* <ImageContainer> */}
           <ImageContainer src={city.img}/>
-          {/* </ImageContainer> */}
-          <br/>
-          <br/>
-
+          </Link>
+          <hr/>
+          </LinkContainer>
         </div>))
       }
+      </CityCard>
     </CityContainer>);
 
   }

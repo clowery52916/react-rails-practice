@@ -11,12 +11,13 @@ const BondLogo = styled.img`
 const Nav = styled.div`
   height: 15vh;
   width: 100vw;
-  background: black;
+  background-color: #202020;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  border-bottom: .9px solid #EAEAEA;
   a {
     color: white;
     margin: auto;
@@ -35,6 +36,7 @@ const LinkMargin = styled.div`
 
 const LogoFlex = styled.div`
 display: flex;
+margin-left: 10px;
 `
 
 class Navbar extends Component {
