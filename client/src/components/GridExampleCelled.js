@@ -8,11 +8,11 @@ const GridExampleCelled = () => (
   <Grid celled stackable>
     <Grid.Row>
       <Grid.Column computer={3}>
-        <Image src='https://images.unsplash.com/photo-1443557661966-8b4795a6f62c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=d963d3320d80448b804b4db8f1e068e7' />
+        <Image src='https://images.unsplash.com/photo-1453301109223-3e2085a1e69d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f3e07d16e1e5020f05c4ea28b32cddcf&auto=format&fit=crop&w=634&q=80' />
       </Grid.Column>
       <Grid.Column computer={13}>
         <h1>Made in Atlanta</h1>
-        <Link to={`/cities/42`}>See the city.</Link>
+        <Link to={`/cities/1`}><h3>See the city.</h3></Link>
         <p>Lorem Ispum is a choke artist. It chokes! I write the best placeholder text, and
 I'm the biggest developer on the web by far... While that's mock-ups and this is
 politics, are they really so different? I'm speaking with myself, number one,
@@ -27,8 +27,7 @@ and I don't believe Lorem Ipsum has the stamina.</p>
 
     <Grid.Row>
       <Grid.Column computer={3}>
-        <Image src='https://images.unsplash.com/photo-1520114878144-6123749968dd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=909f37aaba966b60d222b212647acbaa' />
-        <Link to={`/cities/2`}>London</Link>
+        <Image src='https://images.unsplash.com/photo-1504889100631-d557a48f0d30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3e0bbe98f30034814a40c517f9d261b9&auto=format&fit=crop&w=638&q=80' />
       </Grid.Column>
       <Grid.Column computer={10}>
         <h1>See the City</h1>
@@ -42,8 +41,7 @@ other people. It also could be some wordsmith sitting on their bed that weights
 400 pounds. Ok?</p>
       </Grid.Column>
       <Grid.Column computer={3}>
-        <Image src='https://images.unsplash.com/photo-1516864351034-bf734fd2c77e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=fe2dae6d05ef3f400788248c5b7cc687' />
-        <Link to={`/cities/3`}>San Francisco</Link>
+        <Image src='https://images.unsplash.com/photo-1506834032040-36f9dcabe7ba?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e7a9c1961a9020d95af82bd7e10dbf93&auto=format&fit=crop&w=500&q=60' />
       </Grid.Column>
     </Grid.Row>
   </Grid>
