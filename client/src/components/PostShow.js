@@ -43,17 +43,17 @@ class PostShow extends Component {
                 <h1>Hey whaddup, this is a new page that i am testing. thank you for being here.</h1>
                 <div>{this.state.post.title}</div>
                 <div>{this.state.post.comment}</div>
-                <Button onClick={this.editToggle}>Edit this shit</Button>
+                <Button onClick={this.editToggle}>Edit</Button>
                 {this.state.editToggle? (
                     <EditForm cityId={this.state.post.city_id}
                     postId={this.props.match.params.id}
                     getPost={this.getPost}
                     editToggle={this.editToggle}/>
                 ) : null}
-                <Button onClick={this.deleteToggle}>Delete this shit</Button>
+                <Button onClick={this.deleteToggle}>Delete</Button>
                 {this.state.deleteToggle? (
                     <div>
-                        <p>Are you sure you want to delete this shit?</p>
+                        <p>Are you sure you want to delete?</p>
                         <Button onClick={this.deletePost}>Yes</Button>
                         <Button>No</Button>
                     </div>

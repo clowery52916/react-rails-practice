@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Button } from 'semantic-ui-react'
+import { Button, Card } from 'semantic-ui-react'
 import CommentForm from './CommentForm'
+import styled from 'styled-components'
+
+const FlexChild = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap-reverse;
+`
 
 class City extends Component {
     state = {
@@ -61,12 +68,16 @@ class City extends Component {
                     getPost={this.getPost}/>
                 ): null }
                 {this.state.post.map(p => (
+                    <FlexChild>
+                    <Card> 
                     <div>
                     <div key={p.id}>
                     <Link to={`/cities/${this.state.city.id}/posts/${p.id}`}>{p.title}</Link>
                     </div>
                     <div>{p.comment}</div>
                     </div>
+                    </Card>
+                    </FlexChild>
                 ))}
             </div>
         );
